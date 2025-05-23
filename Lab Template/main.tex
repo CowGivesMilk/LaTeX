@@ -1,0 +1,43 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor,graphicx,fancyhdr}
+\usepackage[top=0.6in,bottom=0.7in,right=1in,left=1.35in]{geometry}
+\usepackage{textcase}
+\definecolor{black}{RGB}{0,0,0}
+
+
+
+% Define parameters
+\newcommand{\labnumber}{<<<<LAB NUMBER>>>>}
+\newcommand{\labtopic}{<<<<LAB TOPIC>>>>}
+\newcommand{\subjectname}{<<<<SUBJECT NAME>>>>}
+
+\newcommand{\studentname}{Nimesh Poudel}
+\newcommand{\studentid}{KAT078BCT054}
+\newcommand{\studentgroup}{B1}
+\newcommand{\studentyear}{IV/I}
+
+
+% Page Style
+\fancypagestyle{name_roll_page}{
+    \fancyhf{}
+    \fancyfoot[L]{\texttt{\studentname}}  % Left footer
+    \fancyfoot[C]{\texttt{\studentid}}  % Center footer       
+    \fancyfoot[R]{\texttt{\thepage}} % Right footer
+}
+
+\pagestyle{name_roll_page}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{2pt}
+
+\begin{document}
+
+\input{titlepage.tex}
+\newpage
+\section*{\centering \Huge{\labtopic}}
+
+
+\end{document}
