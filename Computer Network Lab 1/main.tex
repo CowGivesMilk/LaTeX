@@ -2,10 +2,12 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{xcolor,graphicx}
-\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
+\usepackage{xcolor,graphicx,fancyhdr}
+\usepackage[top=0.6in,bottom=0.7in,right=1in,left=1.35in]{geometry}
+\usepackage{textcase}
+\definecolor{black}{RGB}{0,0,0}
 
-\definecolor{blue}{RGB}{31,56,100}
+
 
 % Define parameters
 \newcommand{\labnumber}{1}
@@ -17,10 +19,26 @@
 \newcommand{\studentgroup}{B1}
 \newcommand{\studentyear}{IV/I}
 
+
+% Page Style
+\fancypagestyle{name_roll_page}{
+    \fancyhf{}
+    \fancyfoot[L]{\texttt{\studentname}}  % Left footer
+    \fancyfoot[C]{\texttt{\studentid}}  % Center footer       
+    \fancyfoot[R]{\texttt{\thepage}} % Right footer
+}
+
+\pagestyle{name_roll_page}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{2pt}
+
 \begin{document}
 
 \input{titlepage.tex}
-\chapter*{\centering \labtopic}
+\newpage
+\section*{\centering \Huge{\labtopic}}
+
 \section*{Required Components}
 \begin{itemize}
     \item LAN Cable
@@ -59,7 +77,7 @@ The 568A standrad is one of the two main standards used for Ethernet cables. It 
 This specific order helps to ensure proper signal transmission and is followed when creating straight-through or crossover cables.
 
 \subsubsection*{568B Standard}
-The 568B wiring standard is more commonly used in commercial and older installations. It switches the position of the green and orange wire pairs to 568A. In this standarad orange wire comes first. The color order from pin one to pin eight is:
+The 568B wiring standard is more commonly used in commercial and older installations. It switches the position of the green and orange wire pairs to 568A. In this standard orange wire comes first. The color order from pin one to pin eight is:
 
 \begin{enumerate}
     \item Orange White
@@ -72,7 +90,7 @@ The 568B wiring standard is more commonly used in commercial and older installat
     \item Brown
 \end{enumerate}
 
-568B is widely used because it became poplular standarad over time, especially in offices A and large network setups. Like 568A, it ensures the correct flow of data across network and devices. 
+568B is widely used because it became poplular standard over time, especially in offices A and large network setups. Like 568A, it ensures the correct flow of data across network and devices. 
 \newpage
 \subsection*{Straight Cable}
 A straight cable is a type of Ethernet cable where both ends have the same wiring standard. either 568A to 568A or 568B to 568B. This means the wire colors are arranged in the same order on both connectors. Straight cables are used to connect different types of devices, such as a computer to a switch, a router to a switch, or a PC to a hub, These cables are very common and are usually used in most home and office networks. For example, if you are connecting your computer to your internet router, you will likely use a straight cable.
@@ -82,7 +100,7 @@ A straight cable is a type of Ethernet cable where both ends have the same wirin
     \caption{Straight cable pin connection}
 \end{figure}
 \subsection*{Crossover Cable}
-A crossover cable is an Ethernet cable where one end follows the 568A standard and the other end follows the 568B standard. This means the wire colors are arranged differently on each side. Crossover cables are used to connect similar types of devices, such as PC to PC, switch to switch, router to router, or hub to hub. There are also some exceptions where devices that look different are treated as similar. For example, PC to router and switch to hub are considered similar devices and need a crossover cable in older network setups. These connections require the transmit and receive signals to cross over. However, most modern devices support Auto-MDI/MDIX, which allows them to automatically adjust and work with either a straight or crossover cable. Still, it's important to know the correct cable ty-especially for labs and manual configurations.
+A crossover cable is an Ethernet cable where one end follows the 568A standard and the other end follows the 568B standard. This means the wire colors are arranged differently on each side. Crossover cables are used to connect similar types of devices, such as PC to PC, switch to switch, router to router, or hub to hub. There are also some exceptions where devices that look different are treated as similar. For example, PC to router and switch to hub are considered similar devices and need a crossover cable in older network setups. These connections require the transmit and receive signals to cross over. However, most modern devices support Auto-MDI/MDIX, which allows them to automatically adjust and work with either a straight or crossover cable. Still, it's important to know the correct cable especially for labs and manual configurations.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.2\linewidth]{crossover_cable.png}
