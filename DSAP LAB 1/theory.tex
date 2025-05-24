@@ -1,0 +1,92 @@
+\section*{Theory}
+Signal can be defined as a function of one or more independent variables 
+which conveys information about the behavior or nature of some phenomenon. 
+It’s examples include electrical signal which is a voltage function of time.
+ 1-D signals are of two types:
+ \begin{itemize}
+    \item \textbf{Continuous time signal (CT signal):}
+    These signals are defined in every instance of
+time under consideration. It is represented as $x(t)$. Ex. Electrical Signal.
+    \item \textbf{Discrete time signal (DT signal):}
+    These signals are defined only at certain time
+instants. Amplitude between two time instances is not defined. It is represented as $x[n]$.
+ \end{itemize}
+Some basic signals include:
+\begin{enumerate}
+    \item \textbf{Unit Impulse Signal:} Also known as the Dirac delta function, it is defined as a signal
+that is zero at all times except at $t=0$, where it is $1$ (in DT) and $\infty$ (in CT).\\
+    For DT:
+    \[\delta[n] := \begin{cases}
+        1 & \text{if } n = 0\\
+        0 & \text{Otherwise}
+    \end{cases}\]
+    For CT:
+    \[\delta(t) := \begin{cases}
+        \infty & \text{if } t = 0\\
+        0 & \text{Otherwise}
+    \end{cases}\]
+
+
+    \item \textbf{Unit Step Signal:} This signal is $0$ for negative time and $1$ for non negative time.
+    \[\theta(t) := \begin{cases}
+        0 & \text{if }t < 0\\
+        1 & \text{if }t \geq 0
+    \end{cases}\]
+
+    \item \textbf{Unit Ramp Signal:} A ramp signal increases linearly with time.
+    \[R(t) := \begin{cases}
+        0 & \text{if } t \leq 0\\
+        t & \text{if } t > 0 
+    \end{cases}\]
+
+\item \textbf{Signum Signal:} This signal indicates the sign of a number, returning $-1$ for negative inputs, $0$ at zero, and $1$ for positive inputs.
+    \begin{center}
+    \begin{minipage}{0.45\linewidth}
+    \[
+        \text{sgn}(t) := \begin{cases}
+            -1 & \text{if } t < 0 \\
+            0 & \text{if } t = 0 \\
+            1 & \text{if } t > 0
+        \end{cases}
+    \]
+    \end{minipage}
+    OR,
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+        \[
+            \text{sgn}(t) := \begin{cases}
+            0 & \text{if } t = 0 \\
+            \dfrac{t}{|t|} & \text{if } t \neq 0
+        \end{cases}
+        \]
+    \end{minipage}
+    \end{center}
+\item \textbf{Sinusoidal Signal:} A periodic waveform described by sine or cosine functions. 
+    \begin{center}
+        \begin{minipage}{0.45\linewidth}
+            \[x(t) = A \sin(\omega t)\]
+        \end{minipage}
+        \begin{minipage}{0.45\linewidth}
+            \[y(t) = A \cos(\omega t)\]
+        \end{minipage}
+    \end{center}
+\item \textbf{Rectangular Signal:} This signal has a constant amplitude for a fixed interval and is zero elsewhere.
+    \[\text{rect}\left(\dfrac{t}{a}\right) = \Pi\left(\dfrac{t}{a}\right) := \begin{cases}
+        0&\text{if } \left\lvert t \right\rvert > \dfrac{a}{2}\\
+        \dfrac{1}{2}&\text{if } \left\lvert t \right\rvert = \dfrac{a}{2}\\
+        0&\text{if } \left\lvert t \right\rvert < \dfrac{a}{2}
+    \end{cases}\]
+    Alternative definitions of the function define $\text{rect}(\pm \dfrac{a}{2})$ to be $0, 1$ or undefined.
+\item \textbf{Sinc funcion:} 
+    In mathematics, the historical unnormalized sinc function is defined as:
+        \[sinc(t) := \begin{cases}
+            1&\text{if } t = 0\\
+            \dfrac{\sin(t)}{t}&\text{if } t \neq 0
+        \end{cases}\]
+        In digital signal processing and information theory, the normalized sinc function is commonly defined by,
+        \[sinc(t) := \begin{cases}
+            1&\text{if } t = 0\\
+            \dfrac{\sin(\pi t)}{\pi t}&\text{if } t \neq 0
+        \end{cases}\]
+
+\end{enumerate}
