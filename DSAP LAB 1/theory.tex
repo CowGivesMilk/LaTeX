@@ -70,21 +70,21 @@ that is zero at all times except at $t=0$, where it is $1$ (in DT) and $\infty$ 
             \[y(t) = A \cos(\omega t)\]
         \end{minipage}
     \end{center}
+
 \item \textbf{Rectangular Signal:} This signal has a constant amplitude for a fixed interval and is zero elsewhere.
     \[\text{rect}\left(\dfrac{t}{a}\right) = \Pi\left(\dfrac{t}{a}\right) := \begin{cases}
-        0&\text{if } \left\lvert t \right\rvert > \dfrac{a}{2}\\
-        \dfrac{1}{2}&\text{if } \left\lvert t \right\rvert = \dfrac{a}{2}\\
-        0&\text{if } \left\lvert t \right\rvert < \dfrac{a}{2}
+        0,&\text{if } \left\lvert t \right\rvert > \frac{a}{2}\\
+        1,&\text{if } \left\lvert t \right\rvert \leq \frac{a}{2}
     \end{cases}\]
-    Alternative definitions of the function define $\text{rect}(\pm \dfrac{a}{2})$ to be $0, 1$ or undefined.
+
 \item \textbf{Sinc funcion:} 
-    In mathematics, the historical unnormalized sinc function is defined as:
-        \[sinc(t) := \begin{cases}
+    In mathematics, the historical unnormalized sinc function is defined as,
+        \[\text{sinc}(t) := \begin{cases}
             1&\text{if } t = 0\\
             \dfrac{\sin(t)}{t}&\text{if } t \neq 0
         \end{cases}\]
-        In digital signal processing and information theory, the normalized sinc function is commonly defined by,
-        \[sinc(t) := \begin{cases}
+        In digital signal processing and information theory, the normalized sinc function is commonly defined as,
+        \[\text{sinc}(t) := \begin{cases}
             1&\text{if } t = 0\\
             \dfrac{\sin(\pi t)}{\pi t}&\text{if } t \neq 0
         \end{cases}\]
